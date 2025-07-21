@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orenzi | Developer Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/typewriter-effect@2.18.0/dist/core.js"></script>
+</head>
+<body class="bg-gray-900 text-white font-[Poppins] transition-all duration-500">
+
+  <!-- Theme Toggle -->
+  <button id="themeToggle" class="fixed top-4 right-4 z-50 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">
+    Toggle Theme
+  </button>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center flex-col text-center px-6">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Orenzi</h1>
+    <h2 id="typewriter" class="text-xl md:text-2xl text-green-400 mb-6"></h2>
+    <a href="#projects" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-2xl transition duration-300">View My Work</a>
+  </section>
+
+  <!-- Background Category Section -->
+  <section id="background-category" class="py-20 px-6 bg-gray-800">
+    <h2 class="text-3xl font-bold text-center mb-12">Choose a Background</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Nature -->
+      <div class="cursor-pointer rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105"
+           style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb'); background-size: cover; background-position: center;"
+           data-bg="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+        <div class="bg-black bg-opacity-60 h-48 flex items-center justify-center">
+          <span class="text-white text-xl font-semibold">Nature</span>
+        </div>
+      </div>
+      <!-- Abstract -->
+      <div class="cursor-pointer rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105"
+           style="background-image: url('https://images.unsplash.com/photo-1491895200222-0fc4e0e40c54'); background-size: cover; background-position: center;"
+           data-bg="https://images.unsplash.com/photo-1491895200222-0fc4e0e40c54">
+        <div class="bg-black bg-opacity-60 h-48 flex items-center justify-center">
+          <span class="text-white text-xl font-semibold">Abstract</span>
+        </div>
+      </div>
+      <!-- Space -->
+      <div class="cursor-pointer rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105"
+           style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa'); background-size: cover; background-position: center;"
+           data-bg="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa">
+        <div class="bg-black bg-opacity-60 h-48 flex items-center justify-center">
+          <span class="text-white text-xl font-semibold">Space</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 px-6 bg-gray-800">
+    <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Example Project Card -->
+      <div class="relative group bg-gray-700 rounded-2xl overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Project Name</h3>
+          <p class="text-sm">A short description of the project goes here.</p>
+        </div>
+        <div class="absolute inset-0 bg-black bg-opacity-90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div class="text-center">
+            <p class="mb-4">Check my GitHub Profile:</p>
+            <a href="https://github.com/Orenzi7" target="_blank" class="text-green-400 hover:underline">github.com/Orenzi7</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 px-6">
+    <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
+    <p class="max-w-3xl mx-auto text-center text-gray-300 leading-relaxed">
+      I'm a passionate frontend developer who loves building beautiful and user-friendly web experiences. I specialize in responsive design, animation, and clean code.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 px-6 bg-gray-800">
+    <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST" class="max-w-xl mx-auto space-y-4">
+      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
+      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
+      <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-green-400"></textarea>
+      <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-2xl transition duration-300">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    // Typewriter
+    const typewriter = new Typewriter(document.getElementById('typewriter'), {
+      loop: true,
+      delay: 75
+    });
+
+    typewriter
+      .typeString("Frontend Developer")
+      .pauseFor(2000)
+      .deleteAll()
+      .typeString("UI/UX Enthusiast")
+      .pauseFor(2000)
+      .deleteAll()
+      .typeString("Clean Code Lover 💻")
+      .pauseFor(2000)
+      .start();
+
+    // Background Switcher
+    const backgrounds = document.querySelectorAll('#background-category [data-bg]');
+    backgrounds.forEach(item => {
+      item.addEventListener('click', () => {
+        const bgUrl = item.getAttribute('data-bg');
+        document.body.style.backgroundImage = `url('${bgUrl}')`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundAttachment = 'fixed';
+        document.body.style.backgroundRepeat = 'no-repeat';
+      });
+    });
+
+    // Dark/Light Mode Toggle
+    const toggle = document.getElementById("themeToggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("bg-gray-900");
+      document.body.classList.toggle("bg-white");
+      document.body.classList.toggle("text-white");
+      document.body.classList.toggle("text-black");
+    });
+  </script>
+
+</body>
+</html>
